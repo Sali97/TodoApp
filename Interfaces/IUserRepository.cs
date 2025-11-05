@@ -8,6 +8,6 @@ namespace TaskAPI.Interfaces
         Task<User> GetById(int id);
         Task AddAsync(User user);
         Task DeleteAsync(int id);
-        Task UpdateAsync(int oldId, User user);
+        Task UpdateAsync(User user);
     }
 }

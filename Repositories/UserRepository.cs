@@ -43,9 +43,8 @@ namespace TaskAPI.Repositories
             return user;
         }
 
-        public async Task UpdateAsync(int oldId, User user)
+        public async Task UpdateAsync(User user)
         {
-            user.Id = oldId; //Jelenleg ez csak teszt így, nem történik meg a frissítés - feltehetően mert alapvetően az új felhasználó ID-ját keresi az SQL.
             using var connection = GetConnection();
             var U = await connection.ExecuteAsync("UPDATE tblUser SET Name=@Name,LevelId=@LevelId WHERE Id=@Id", user);
         }

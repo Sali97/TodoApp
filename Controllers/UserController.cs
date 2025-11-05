@@ -68,7 +68,8 @@ namespace TaskAPI.Controllers
                 return NotFound("This UserId does not exist in the database.");
             }
 
-            _userRepository.UpdateAsync(id, newUser);
+            newUser.Id = id;
+            _userRepository.UpdateAsync(newUser);
             return NoContent();
         }
     }
